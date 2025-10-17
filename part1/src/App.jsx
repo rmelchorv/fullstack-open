@@ -1,22 +1,17 @@
-const Hello = (props) => {
-  console.log(props)
-
-  return (
-    <div>
-      <p>Hello {props.name}, you're {props.age} years old!</p>
-    </div>
-  )
-}
-
 const App = () => {
-  const name = "Melchor"
-  const age = 46
+  const friends = [
+    { name: 'Freddy', age: 10 },
+    { name: 'Ted', age: 12 },
+  ]
+  const partners = ['Mario', 'Luigi'  ]
 
   return (
     <div>
-      <h1>Greetings</h1>
-      <Hello name="Ricardo" age={28+18} />
-      <Hello name={name} age={age} />
+      <h2>Friends</h2>
+      <p>{friends[0].name}, {friends[0].age}</p>
+      <p>{friends[1].name}, {friends[1].age}</p>
+      <h2>Partners</h2>
+      <p>{partners[0]}, {partners[1]}</p>
     </div>
   )
 }
