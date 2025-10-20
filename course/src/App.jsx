@@ -5,19 +5,26 @@ function Header(props) {
     </>
   )
 }
+function Part(props) {
+  return (
+    <>
+      <p>{props.name} {props.number}</p>
+    </>
+  )
+}
 function Content(props) {
   return (
-    <div>
+    <>
     {
       props.parts.map((part, i) => (
-        <p key={i}>{part} {props.exercises[i]}</p>
+        <Part name={part} number={props.exercises[i]} />
       ))
     }
-    </div>
+    </>
   )
 }
 function Total(props) {
-  const total = props.total.reduce((accum, current) => accum + current, 0);
+  const total = props.total.reduce((sum, item) => sum + item, 0);
 
   return (
     <>
